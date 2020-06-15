@@ -15,10 +15,23 @@ def selection_sort(arr):
     return arr
 
 
-# TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
+    # initialize swap tracker to True to enter the loop
+    swap_happened = True
+    # loop until parsed entire input without any swaps
+    while swap_happened:
+        # no swaps yet this time through
+        swap_happened = False
+        # Loop through your array
+        # start at index 1 and compare with previous neighbor
+        for i in range(1, len(arr)):
+            # Compare each element to its neighbor
+            if arr[i] < arr[i-1]:
+                # If elements in wrong position (relative to each other, swap them)
+                arr[i], arr[i-1] = arr[i-1], arr[i]
+                # swap occurred, set flag
+                swap_happened = True
+    # If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
 
     return arr
 
